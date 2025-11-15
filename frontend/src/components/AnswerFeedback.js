@@ -15,7 +15,7 @@ export default function AnswerFeedback({ initial = 'none', onFeedback } = {}) {
     if (typeof onFeedback === 'function') onFeedback(next);
   }
 
-  // simple styles — uses Tailwind classes already in your project
+  
   const likeClasses =
     'px-2 py-1 rounded border transition inline-flex items-center gap-2 ' +
     (feedback === 'like' ? 'bg-green-600 text-white border-green-600' : 'bg-transparent text-gray-700 dark:text-gray-200');

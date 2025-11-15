@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { API_BASE } from '../config';
+
 
 export default function Sidebar(){
   const [sessions, setSessions] = useState([]);
@@ -8,14 +10,14 @@ export default function Sidebar(){
   const location = useLocation();
 
   useEffect(()=> {
-    fetch('http://localhost:4000/api/sessions')
+    fetch(`${API_BASE}/api/sessions`)
       .then(r=>r.json())
       .then(setSessions)
       .catch(()=>setSessions([]));
   }, []);
 
 function newChat(){
-  fetch('http://localhost:4000/api/new-chat')
+  fetch(`${API_BASE}/api/new-chat`)
     .then(r => r.json())
     .then(data => {
       
